@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sell Your Property - P&P Realtors</title>
+  <link rel="stylesheet" href="Style1.css" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: white;
+      padding: 10px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .topnav {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .topnav a {
+      color: #333;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 15px;
+      transition: background-color 0.3s;
+    }
+
+    .topnav a:hover, .topnav .active {
+      background-color: #e6e6e6;
+      border-radius: 6px;
+    }
+
+    .sell-page {
+      max-width: 1100px;
+      margin: 160px auto 60px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .sell-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .sell-header h1 {
+      color: #007bff;
+      font-size: 2.5em;
+    }
+
+    .sell-description {
+      text-align: center;
+      color: #555;
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+
+    .sell-form {
+      display: grid;
+      gap: 20px;
+    }
+
+    .sell-form input,
+    .sell-form textarea {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1em;
+      transition: border 0.3s;
+      font-family: inherit;
+    }
+
+    .sell-form input:focus,
+    .sell-form textarea:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    .sell-form button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 14px;
+      font-size: 1em;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .sell-form button:hover {
+      background-color: #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #222;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="topnav">
+      <a href="HomePage.htm">Home</a>
+      <a href="AboutUs.htm">About Us</a>
+      <a href="Properties.htm">Properties</a>
+      <a href="Leasing.htm">Leasing</a>
+      <a class="active" href="Sell.htm">Sell</a>
+      <a href="Contacts.htm">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="sell-page">
+      <div class="sell-header">
+        <h1>Sell Your Property</h1>
+      </div>
+      <p class="sell-description">Ready to move on? We use expert marketing and negotiation to get you the best price for your property. Share your details below, and we’ll get in touch!</p>
+
+      <form class="sell-form" action="https://formspree.io/f/mwpbnevb" method="POST">
+        <input type="text" name="name" placeholder="Your Full Name" required>
+        <input type="email" name="email" placeholder="Your Email Address" required>
+        <input type="tel" name="phone" placeholder="Phone Number">
+        <input type="text" name="property-address" placeholder="Property Address" required>
+        <textarea name="property-description" rows="4" placeholder="Tell us about your property..." required></textarea>
+        <button type="submit">Request a Valuation</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 P&amp;P Realtors. All rights reserved.
+  </footer>
+
+</body>
+</html>

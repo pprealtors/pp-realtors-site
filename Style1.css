@@ -1,0 +1,734 @@
+/* --- General Body & Container Styles --- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* A more common font for professional sites */
+    background-color: #f4f7f6; /* Light gray background */
+    color: #333;
+    line-height: 1.6;
+}
+
+main {
+    padding-bottom: 50px; /* Space above footer */
+}
+
+/* --- Top Navigation Bar (Header) --- */
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    position: sticky; /* Makes the header stick to the top when scrolling */
+    top: 0;
+    z-index: 1000; /* Ensures it stays on top of other content */
+}
+
+.topnav {
+    display: flex;
+    justify-content: flex-end; /* Pushes navigation links to the right */
+    align-items: center;
+    padding: 15px 20px;
+    max-width: 1400px; /* Limit width of header content */
+    margin: 0 auto; /* Center the header content */
+}
+
+.topnav a {
+    color: #333;
+    text-align: center;
+    padding: 10px 18px;
+    text-decoration: none;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+.topnav a:hover, .topnav a.active {
+    background-color: #e0f2f7; /* Light blue on hover/active */
+    color: #007bff;
+}
+
+.topnav .call-action {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 5px;
+    margin-left: 25px; /* Space from other nav items */
+}
+
+.topnav .call-action:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+.topnav .call-action i {
+    margin-right: 8px; /* Space between icon and text */
+}
+
+/* --- Hero Section (The Big Visual Area) --- */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Adjust height as desired for the visual impact */
+    overflow: hidden; /* Ensures nothing spills out of the hero section */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Puts background behind content */
+}
+
+.hero-background img, .hero-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image/video covers the area */
+    filter: brightness(0.6); /* Darken for text readability */
+}
+
+.hero-content {
+    position: relative; /* Relative to hero-section; flexbox on hero-section handles centering */
+    z-index: 2; /* Puts content above background */
+    max-width: 900px; /* Max width for the overall content block */
+    width: 90%; /* Allow it to be slightly smaller than max-width */
+    padding: 20px; /* Padding inside the content block */
+}
+
+.hero-content h1 {
+    font-size: 3.5em; /* Larger, more impactful headline */
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.6); /* Stronger shadow for contrast */
+    line-height: 1.2;
+}
+
+.hero-content .sub-headline {
+    font-size: 1.4em;
+    margin-bottom: 40px;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+/* --- Search Widget Styles --- */
+.search-widget {
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    padding: 25px 30px; /* Generous padding inside the widget */
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    margin: 0 auto; /* Center the widget itself within hero-content */
+    width: 100%; /* Make it take full width of its parent (.hero-content) */
+    max-width: 680px; /* A reasonable max-width for the search bar form */
+    color: #333; /* Text color inside widget */
+}
+
+.search-widget form {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    gap: 15px; /* Space between rows */
+}
+
+.search-widget .search-row {
+    flex-grow: 1; /* Allows it to take available space */
+}
+
+.search-widget .search-row input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em;
+    outline: none;
+}
+
+.search-widget .filter-row {
+    display: grid; /* Use grid for filter dropdowns */
+    /* Increased minmax to give more breathing room for text, from 140px to 160px. */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); /* Responsive columns */
+    gap: 8px; /* Slightly reduced gap from 10px to 8px to save horizontal space */
+}
+
+.search-widget .filter-row select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 1.1em;
+    cursor: pointer;
+    -webkit-appearance: none; /* Remove default select arrow */
+    -moz-appearance: none;
+    appearance: none;
+    /* Custom arrow for select boxes */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%20viewBox%3D%220%200%20292.4%20292.4%22%3E%3Cpath%20fill%3D%22%23000000%22%20d%3D%22M287%20197.3l-133.5-133.6c-3.2-3.2-8.3-3.2-11.5%200l-133.5%20133.6c-3.2%203.2-3.2%208.3%200%2011.5l11.5%2011.5c3.2%203.2%208.3%203.2%2011.5%200l106-106.1c3.2-3.2%208.3-3.2%2011.5%200l106%20106.1c3.2%203.2%208.3%203.2%2011.5%200l11.5-11.5c3.2-3.1%203.2-8.2%200-11.4z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    padding-right: 30px; /* Space for the custom arrow */
+}
+
+.search-widget .search-now-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-widget .search-now-button:hover {
+    background-color: #0056b3;
+}
+
+/* --- General Section Styling (below hero) --- */
+section {
+    padding: 60px 20px; /* More vertical padding for sections */
+    margin: 0 auto;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    margin-bottom: 40px; /* Space between sections */
+    text-align: center; /* Center section headings */
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #0056b3;
+}
+
+/* --- What Are You Looking For? Section --- */
+.what-looking-for .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.what-looking-for .category-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.what-looking-for .category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.what-looking-for .category-card i {
+    font-size: 3.5em; /* Large icon size */
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.what-looking-for .category-card h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.what-looking-for .category-card p {
+    font-size: 1em;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.what-looking-for .category-card .button {
+    background-color: #28a745; /* Green button for this section */
+    color: white;
+}
+
+.what-looking-for .category-card .button:hover {
+    background-color: #218838;
+}
+
+/* --- Why Choose P&P Realtors? Section --- */
+.why-choose-us .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.why-choose-us .benefit-item {
+    background-color: #e0f2f7; /* Light blue background */
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.why-choose-us .benefit-item i {
+    font-size: 3em;
+    color: #0056b3;
+    margin-bottom: 15px;
+}
+
+.why-choose-us .benefit-item h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.why-choose-us .benefit-item p {
+    font-size: 0.95em;
+    color: #666;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #222;
+    color: #bbb;
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .hero-content h1 {
+        font-size: 2.8em;
+    }
+    .hero-content .sub-headline {
+        font-size: 1.2em;
+    }
+    .hero-content {
+        width: 95%; /* Give it more room on slightly smaller desktops/large tablets */
+        padding: 15px;
+    }
+    .search-widget {
+        padding: 20px 25px; /* Slightly less padding on tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .topnav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+    .topnav a {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .topnav .call-action {
+        margin-left: 0;
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .hero-section {
+        height: 500px; /* Adjust height for smaller screens */
+    }
+    .hero-content h1 {
+        font-size: 2em;
+    }
+    .hero-content .sub-headline {
+        font-size: 1em;
+    }
+    .search-widget {
+        padding: 15px 20px; /* Reduce padding more for smaller screens */
+    }
+    .search-widget .filter-row {
+        grid-template-columns: 1fr; /* Stack filters vertically on small screens */
+        gap: 15px; /* Increase gap slightly when stacking */
+    }
+    section {
+        padding: 40px 15px;
+        margin-bottom: 30px;
+    }
+    section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 400px;
+    }
+    .hero-content h1 {
+        font-size: 1.8em;
+    }
+    .hero-content .sub-headline {
+        font-size: 0.9em;
+    }
+    .search-widget .search-row input,
+    .search-widget .filter-row select,
+    .search-widget .search-now-button {
+        font-size: 1em;
+        padding: 10px;
+    }
+    .search-widget {
+        padding: 15px; /* Even less padding for tiny screens */
+    }
+}
+.contact-section {
+    padding: 2em;
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.contact-section h1 {
+    text-align: center;
+    color: indigo;
+}
+
+.contact-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.contact-details, .contact-form {
+    flex: 1 1 45%;
+    background-color: white;
+    padding: 1.5em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.6em;
+    margin: 0.5em 0 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.contact-form button {
+    background-color: indigo;
+    color: white;
+    padding: 0.6em 1.2em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.contact-form button:hover {
+    background-color: #4b0082;
+}
+.about-section {
+    padding: 2em;
+    background-color: #f9f9f9;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+.about-section h1 {
+    text-align: center;
+    color: indigo;
+    margin-bottom: 1em;
+}
+
+.mission-values {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    margin-top: 2em;
+}
+
+.mission, .values {
+    flex: 1 1 45%;
+    background-color: white;
+    padding: 1.5em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.values ul {
+    list-style: disc;
+    padding-left: 1.2em;
+}
+
+.team-intro {
+    margin-top: 2em;
+    background-color: white;
+    padding: 1.5em;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+/* Style the contact section */
+.contact-section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: sans-serif;
+  color: #333;
+}
+
+/* Contact details and form box styles */
+.contact-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+
+/* Left contact info box */
+.contact-details,
+.contact-form {
+  flex: 1 1 45%;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Labels and inputs */
+.contact-form label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+/* Button styling */
+.contact-form button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect on button */
+.contact-form button:hover {
+  background-color: #45a049;
+}
+
+/* Email link button */
+.contact-details a[href^="mailto:"] {
+  color: #4CAF50;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.contact-details a[href^="mailto:"]:hover {
+  text-decoration: underline;
+}
+.about-section {
+  padding: 40px;
+  background-color: #fdfdfd;
+  font-family: sans-serif;
+  color: #333;
+}
+
+.about-content {
+  background-color: white;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content h2 {
+  margin-top: 25px;
+  color: #4CAF50;
+}
+
+.about-content ul {
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.about-content li {
+  margin-bottom: 10px;
+}
+.about-content {
+  background-color: white;
+  padding: 25px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-content:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Optional: hover effect on list items */
+.about-content li {
+  transition: transform 0.2s ease;
+}
+
+.about-content li:hover {
+  transform: translateX(5px);
+  color: #4CAF50;
+  font-weight: bold;
+}
+.contact-hero .hero-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 2px solid #ddd;
+  margin-bottom: 30px;
+  border-radius: 8px;
+}
+/* Hero image styling */
+.contact-hero .hero-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-bottom: 3px solid #4a4a8c; /* matches Indigo-ish theme */
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+/* Contact boxes container */
+.contact-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Contact details styling */
+.contact-details {
+  flex: 1 1 40%;
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.contact-details h2 {
+  color: #4a4a8c;
+  margin-bottom: 15px;
+}
+
+.contact-details p {
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.contact-details a {
+  color: #4a4a8c;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+  color: #2a2a5a;
+}
+
+/* Contact form styling */
+.contact-form {
+  flex: 1 1 50%;
+  background-color: #f9f9f9;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.contact-form h2 {
+  color: #4a4a8c;
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  font-weight: bold;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  font-family: inherit;
+  transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #4a4a8c;
+  outline: none;
+}
+
+.contact-form button {
+  background-color: #4a4a8c;
+  color: white;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #2a2a5a;
+}
+
+.contact-form p {
+  font-size: 0.9em;
+  color: gray;
+}
+.about-section h1 {
+  color: #003366;
+  font-size: 3em; /* Makes it bigger */
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+

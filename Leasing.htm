@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Leasing</title>
+<link rel="stylesheet" href="Style1.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leasing - P&P Realtors</title>
+  <link rel="stylesheet" href="Style1.css" />
+  <style>
+    .rental-page {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .rental-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .rental-header h1 {
+      color: #007bff;
+      font-size: 2.5em;
+    }
+
+    .rental-card {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      align-items: flex-start;
+    }
+
+    .rental-image {
+      flex: 1 1 40%;
+      min-width: 300px;
+    }
+
+    .rental-image img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .rental-details {
+      flex: 1 1 55%;
+    }
+
+    .rental-details h2 {
+      margin-top: 0;
+      color: #333;
+    }
+
+    .rental-details p {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="topnav">
+      <a href="HomePage.htm">Home</a>
+      <a href="AboutUs.htm">About Us</a>
+      <a href="Properties.htm">Properties</a>
+      <a class="active" href="Leasing.htm">Leasing</a>
+      <a href="Contacts.htm">Contact</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="rental-page">
+      <div class="rental-header">
+        <h1>Leased Properties</h1>
+      </div>
+
+      <div class="rental-card">
+        
+
+        </div>
+        <div class="rental-details">
+          <h2>Property 1: 666 Exton Commons, Exton, PA 19341</h2>
+          <p><strong>Type:</strong> Office Space</p>
+          <p><strong>Available:</strong> Now</p>
+          <p><strong>Contact:</strong> (516) 667-0177</p>
+<div class="rental-image">
+          <section class="property-gallery">
+ <section class="property-images">
+  <h2>Property Photos</h2>
+  <img src="buildingpic1.jpg" alt="Building Image 1" class="property-photo">
+  <img src="buildingpic2.jpg" alt="Building Image 2" class="property-photo">
+  <img src="buildingpic3.jpg" alt="Building Image 3" class="property-photo">
+</section>
+          <p><strong>Property Overview:</strong> This recently renovated 1,325 square foot office building is currently leased. It features a newer roof (2015), new heater, central air, gutters, siding, and skylight. The ground floor includes three rooms — one of which is a cozy library — and one bathroom, with an additional room upstairs. The finished basement offers a small room equipped with a microwave and coffee machine.
+
+Interior highlights include ribbon-striped mahogany ceilings, taupe wave carpeting, tile floors, and recessed lighting. Conveniently located within walking distance of Exton Square Mall and Fairfield Shopping Center, this property offers excellent business potential.
+<div class="contact-form">
+  <h2>Lease Your Property With Us</h2>
+  <form action="https://formspree.io/f/mwpbnevb" method="POST">
+    <label for="name">Full Name:</label><br />
+    <input type="text" id="name" name="name" required /><br /><br />
+
+    <label for="email">Email Address:</label><br />
+    <input type="email" id="email" name="email" required /><br /><br />
+
+    <label for="phone">Phone Number:</label><br />
+    <input type="tel" id="phone" name="phone" /><br /><br />
+
+    <label for="property-type">Type of Property:</label><br />
+    <input type="text" id="property-type" name="property-type" placeholder="e.g., Office, Retail, Apartment" required /><br /><br />
+
+    <label for="property-address">Property Address:</label><br />
+    <input type="text" id="property-address" name="property-address" required /><br /><br />
+
+    <label for="description">Brief Description of the Property:</label><br />
+    <textarea id="description" name="description" rows="5" required placeholder="Any key features or notes about the space..."></textarea><br /><br />
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+
+
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p style="text-align:center; padding: 20px; background-color:#222; color:#ccc;">&copy; 2025 P&P Realtors. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
